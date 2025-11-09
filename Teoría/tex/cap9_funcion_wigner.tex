@@ -1,0 +1,100 @@
+\section{Función de Wigner y Observables}
+La función de Wigner es una herramienta poderosa para analizar la estructura cuántica de un estado, ya que permite representar las propiedades del sistema en el espacio de fase $(x,p)$.  
+A través de ella, es posible calcular valores esperados de operadores, visualizar interferencias cuánticas y distinguir entre estados clásicos y no clásicos.
+\comentario{Aunque $W(x,p)$ se asemeja a una densidad de probabilidad, su capacidad de adoptar valores negativos revela la naturaleza cuántica subyacente.}
+
+\subsection{Definición general}
+Para un operador de densidad $\hat{\rho}$, la función de Wigner se define como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W(x,p) = \frac{1}{\pi\hbar} \int_{-\infty}^{\infty}
+    \langle x+y | \hat{\rho} | x-y \rangle \, e^{-2ipy/\hbar} \, dy
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La integral efectúa una transformada de Fourier sobre la diferencia de coordenadas, combinando la información de posición y momento.}
+
+\subsection{Valores esperados en la representación de Wigner}
+El valor esperado de un observable $\hat{A}$ puede calcularse mediante su símbolo de Wigner–Weyl $A_W(x,p)$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \langle \hat{A} \rangle = \iint W(x,p)\,A_W(x,p)\,dx\,dp
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta expresión traduce la mecánica cuántica a un formalismo algebraico análogo al de la estadística clásica, pero con correcciones no conmutativas.}
+
+\subsection{Ejemplo: Energía media del oscilador}
+El símbolo de Wigner–Weyl del Hamiltoniano del oscilador armónico es:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    H_W(x,p) = \frac{p^2}{2m} + \frac{1}{2}m\omega^2x^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Para un estado coherente $|\alpha\rangle$, el valor esperado de la energía resulta:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \langle \hat{H} \rangle_\alpha
+    &= \iint W_\alpha(x,p)\,H_W(x,p)\,dx\,dp
+    = \hbar\omega\left(|\alpha|^2 + \frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Este resultado coincide con la expresión obtenida directamente en el espacio de Hilbert, validando la equivalencia de ambos enfoques.}
+
+\subsection{Criterios de no-clasicidad}
+La presencia de regiones negativas en la función de Wigner indica que el estado cuántico no posee una descripción clásica.  
+Este comportamiento se observa en los estados comprimidos intensamente o en superposiciones tipo “gato de Schrödinger”.
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W(x,p) < 0 \quad \Rightarrow \quad \text{Estado no clásico.}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Las regiones negativas surgen por interferencia cuántica, una propiedad imposible de reproducir con distribuciones probabilísticas reales.}
+
+\subsection{Simetrías y transformaciones}
+La función de Wigner obedece reglas sencillas bajo transformaciones lineales:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W_\alpha(x,p) &\longrightarrow W_\alpha(x - x_0, p - p_0)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Un desplazamiento en el espacio de fase corresponde a la acción del operador de desplazamiento $\hat{D}(\alpha)$.}
+Bajo una rotación por un ángulo $\theta$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W_\alpha(x,p) &\longrightarrow W_\alpha(x\cos\theta + p\sin\theta, -x\sin\theta + p\cos\theta)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta propiedad refleja la invariancia del formalismo frente a las rotaciones en el espacio de fase, análoga a la simetría del Hamiltoniano del oscilador.}
+
+\subsection{Reconstrucción experimental}
+La función de Wigner puede reconstruirse experimentalmente mediante \textit{tomografía cuántica}, en la que se miden las distribuciones de probabilidad de distintas cuadraturas $\hat{X}_\theta$.
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W(x,p) = \frac{1}{2\pi}\int_0^\pi P(X_\theta,\theta)\, e^{iR(\theta)} \, d\theta
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{En la práctica, $P(X_\theta,\theta)$ se obtiene mediante detección homodina, y el conjunto de mediciones permite reconstruir la función completa $W(x,p)$.}
+
+\subsection{Visualización y aplicaciones}
+La representación de Wigner se utiliza para analizar:
+\begin{itemize}
+  \item La coherencia y pureza de estados cuánticos.
+  \item Los efectos de decoherencia y ruido térmico.
+  \item La evolución temporal de paquetes de onda y campos ópticos.
+\end{itemize}
+\comentario{El análisis en el espacio de fase proporciona una visión geométrica del comportamiento cuántico, unificando descripciones clásicas y cuánticas.}

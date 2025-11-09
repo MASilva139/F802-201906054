@@ -1,0 +1,46 @@
+\section{Oscilador Armónico Cuántico}
+Al cuantizar el oscilador armónico, se sustituyen las variables clásicas $x$ y $p$ por operadores $\hat{x}$ y $\hat{p}$ que cumplen la relación de conmutación fundamental:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    [\hat{x}, \hat{p}] = i\hbar
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta relación refleja el principio de incertidumbre de Heisenberg.}
+El Hamiltoniano cuántico se obtiene directamente del clásico:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2\hat{x}^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Para simplificar el análisis, se introducen los operadores de creación y aniquilación:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a} &= \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right), \\
+    \hat{a}^\dagger &= \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Estos operadores no tienen análogo clásico: $\hat{a}$ destruye un cuanto de energía, mientras que $\hat{a}^\dagger$ crea uno.}
+Reescribiendo el Hamiltoniano en términos de ellos:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} &= \hbar\omega\left(\hat{a}^\dagger\hat{a} + \frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La expresión anterior revela que la energía del oscilador cuántico está cuantizada.}
+Los autovalores de energía se obtienen aplicando $\hat{H}$ sobre los estados de número $|n\rangle$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H}|n\rangle &= E_n|n\rangle, \quad E_n = \hbar\omega\left(n+\frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El valor $\frac{1}{2}\hbar\omega$ representa la energía del punto cero, consecuencia directa de la imposibilidad de anular simultáneamente $x$ y $p$.}

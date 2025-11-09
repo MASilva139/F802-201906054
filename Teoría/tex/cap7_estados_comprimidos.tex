@@ -1,0 +1,79 @@
+\section{Estados Comprimidos (Squeezed States)}
+Los \textit{estados comprimidos} o \textit{squeezed states} representan una extensión natural de los estados coherentes.  
+En ellos, la incertidumbre en una cuadratura se reduce por debajo del límite cuántico estándar, mientras que la incertidumbre conjugada aumenta, de manera que el producto $\Delta X \, \Delta P$ sigue satisfaciendo el principio de Heisenberg.
+\comentario{Estos estados son fundamentales en óptica cuántica, interferometría de alta precisión y detección de ondas gravitacionales, donde la reducción de ruido en una cuadratura resulta esencial.}
+
+\subsection{Definición del operador de compresión}
+El estado comprimido se genera aplicando el \textit{operador de compresión} $\hat{S}(\zeta)$ sobre el estado de vacío o sobre un estado coherente:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\zeta\rangle &= \hat{S}(\zeta)|0\rangle, \\
+    \hat{S}(\zeta) &= \exp\!\left[\frac{1}{2}\left(\zeta^* \hat{a}^2 - \zeta (\hat{a}^\dagger)^2\right)\right]
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $\zeta = r e^{i\theta}$ es un número complejo que determina el grado $r$ y la dirección $\theta$ de la compresión.
+\comentario{El operador $\hat{S}(\zeta)$ mezcla los operadores de creación y aniquilación, produciendo correlaciones cuánticas entre ellos.}
+
+\subsection{Efecto sobre los operadores de cuadratura}
+El operador de compresión transforma las cuadraturas según:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{S}^\dagger(\zeta)\,\hat{X}\,\hat{S}(\zeta) &= e^{-r}\hat{X}, \\
+    \hat{S}^\dagger(\zeta)\,\hat{P}\,\hat{S}(\zeta) &= e^{r}\hat{P}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El parámetro $r$ determina el grado de compresión: una cuadratura se “estrecha” y la otra se “ensancha”.}
+
+\subsection{Dispersión de las cuadraturas}
+A partir de la transformación anterior, las incertidumbres del estado comprimido resultan:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    (\Delta X)^2 &= \frac{1}{2} e^{-2r}, \\
+    (\Delta P)^2 &= \frac{1}{2} e^{2r}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El producto $\Delta X \, \Delta P = \tfrac{1}{2}$ se mantiene constante, garantizando la validez del principio de incertidumbre.}
+
+\subsection{Estado comprimido coherente}
+Combinando compresión y desplazamiento se obtiene el \textit{estado comprimido coherente}:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\alpha, \zeta\rangle &= \hat{S}(\zeta)\,\hat{D}(\alpha)|0\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Este tipo de estado posee una distribución elíptica en el espacio de fase: su centro está desplazado, y su forma refleja la compresión en una de las cuadraturas.}
+
+\subsection{Representación en el espacio de fase}
+La función de Wigner correspondiente a un estado comprimido es una elipse en el plano $(x,p)$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W_{\alpha,\zeta}(x,p) = \frac{1}{\pi\hbar}
+    \exp\!\left[-\frac{(x-x_0)^2}{\sigma_x^2} - \frac{(p-p_0)^2}{\sigma_p^2}\right],
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+con
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \sigma_x^2 = \frac{\hbar}{2m\omega}e^{-2r}, \qquad
+    \sigma_p^2 = \frac{\hbar m\omega}{2}e^{2r}.
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Para $r>0$, la incertidumbre en $x$ disminuye mientras que la de $p$ aumenta, dando lugar a la compresión cuántica.}
+
+\subsection{Interpretación física}
+El estado comprimido puede entenderse como una deformación del vacío cuántico.  
+En él, las fluctuaciones de una componente del campo se reducen a costa de amplificar las de la componente conjugada.  
+Esta propiedad se aprovecha en experimentos de interferometría para reducir el ruido de medición.
+\comentario{Los detectores LIGO y Virgo emplean luz comprimida para mejorar la sensibilidad a las ondas gravitacionales, alcanzando niveles de ruido por debajo del límite estándar cuántico.}

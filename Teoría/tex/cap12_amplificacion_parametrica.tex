@@ -1,0 +1,94 @@
+\section{Amplificación Paramétrica y Dinámica del Campo}
+La \textit{amplificación paramétrica} es un proceso óptico no lineal en el que un campo fuerte (la bomba) transfiere energía a uno o más modos del campo electromagnético.  
+Este fenómeno es la base física de la generación de luz comprimida, de la amplificación cuántica y del entrelazamiento entre modos ópticos.
+\comentario{En el dominio cuántico, los procesos paramétricos se modelan mediante interacciones bilineales entre operadores de creación y aniquilación.}
+
+\subsection{Hamiltoniano efectivo}
+El Hamiltoniano que describe la amplificación paramétrica de un modo se puede escribir como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H}_{\text{int}} = i\hbar\kappa\left(\hat{a}^{\dagger 2} e^{-2i\omega_p t} - \hat{a}^2 e^{2i\omega_p t}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $\kappa$ es una constante de acoplamiento proporcional a la no linealidad del medio y $\omega_p$ la frecuencia del bombeo.
+\comentario{El término $\hat{a}^{\dagger 2}$ representa la creación simultánea de dos fotones —base del fenómeno de “down-conversion” paramétrico.}
+
+\subsection{Ecuaciones de Heisenberg para los operadores}
+A partir del Hamiltoniano anterior, las ecuaciones de movimiento de los operadores son:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \frac{d\hat{a}}{dt} &= 2\kappa \hat{a}^\dagger, \\
+    \frac{d\hat{a}^\dagger}{dt} &= 2\kappa \hat{a}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+cuya solución es:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a}(t) &= \hat{a}(0)\cosh(2\kappa t) + \hat{a}^\dagger(0)\sinh(2\kappa t)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta mezcla lineal de $\hat{a}$ y $\hat{a}^\dagger$ corresponde exactamente a la transformación inducida por el operador de compresión $\hat{S}(\zeta)$.}
+
+\subsection{Generación de estados comprimidos}
+Si el campo inicial está en el vacío $|0\rangle$, la acción del Hamiltoniano paramétrico genera un estado comprimido:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\psi(t)\rangle = e^{-i\hat{H}_{\text{int}}t/\hbar}|0\rangle = \hat{S}(\zeta)|0\rangle,
+    \quad \text{con} \quad \zeta = 2\kappa t
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El grado de compresión crece linealmente con el tiempo de interacción y con la intensidad del bombeo óptico.}
+
+\subsection{Amplificación paramétrica de dos modos}
+En el caso de un proceso de \textit{down-conversion} con dos modos ($\hat{a}_1$, $\hat{a}_2$), el Hamiltoniano efectivo es:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H}_{\text{int}} = i\hbar\kappa\left(\hat{a}_1^\dagger \hat{a}_2^\dagger - \hat{a}_1 \hat{a}_2\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Este tipo de interacción genera pares de fotones correlacionados —base de la generación de entrelazamiento óptico.}
+Las ecuaciones de movimiento para ambos modos son:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \frac{d\hat{a}_1}{dt} &= \kappa \hat{a}_2^\dagger, \\
+    \frac{d\hat{a}_2}{dt} &= \kappa \hat{a}_1^\dagger
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+con soluciones:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a}_1(t) &= \hat{a}_1(0)\cosh(\kappa t) + \hat{a}_2^\dagger(0)\sinh(\kappa t), \\
+    \hat{a}_2(t) &= \hat{a}_2(0)\cosh(\kappa t) + \hat{a}_1^\dagger(0)\sinh(\kappa t)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Estas ecuaciones revelan la aparición de correlaciones cuánticas entre los modos, es decir, entrelazamiento.}
+
+\subsection{Conservación de la energía}
+En la amplificación paramétrica, la energía del campo total se conserva mediante la transferencia desde la bomba hacia los modos generados:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hbar\omega_p = \hbar\omega_1 + \hbar\omega_2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Este principio garantiza la coherencia del proceso y la correlación energética entre los fotones producidos.}
+
+\subsection{Implementaciones experimentales}
+Los procesos paramétricos se implementan en cristales no lineales con susceptibilidad óptica $\chi^{(2)}$, tales como KTP, BBO o PPKTP.  
+Cuando son bombeados por un láser intenso, estos materiales generan luz comprimida y entrelazada, detectada posteriormente mediante técnicas de interferometría homodina.
+\comentario{La amplificación paramétrica degenerada y no degenerada son pilares fundamentales de la óptica cuántica moderna y la metrología de precisión.}

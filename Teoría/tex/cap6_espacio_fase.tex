@@ -1,0 +1,81 @@
+\section{Espacio de Fase Cuántico}
+El \textit{espacio de fase cuántico} constituye una representación intermedia entre la descripción de operadores y la descripción por funciones de onda.  
+En él, un estado cuántico se expresa como una distribución sobre las variables continuas de posición y momento (o sus equivalentes en cuadraturas).
+\comentario{El espacio de fase permite visualizar el estado cuántico de manera análoga a las distribuciones clásicas, pero respetando las restricciones impuestas por el principio de incertidumbre.}
+
+\subsection{Motivación y concepto general}
+En mecánica clásica, el estado de una partícula está completamente determinado por un punto $(x,p)$ en el espacio de fase.  
+En mecánica cuántica, la imposibilidad de definir simultáneamente $x$ y $p$ con precisión obliga a reemplazar el punto por una \textit{función cuasi-probabilidad}.
+
+\subsection{Función de Wigner}
+La \textit{función de Wigner}, introducida en 1932, es la representación más común en el espacio de fase cuántico.  
+Se define para un estado descrito por la función de onda $\psi(x)$ como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W(x,p) = \frac{1}{\pi\hbar} \int_{-\infty}^{\infty} \psi^*\left(x + y\right) \psi\left(x - y\right) e^{2ipy/\hbar} \, dy
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta función combina información de posición y momento, pero puede adoptar valores negativos debido a la interferencia cuántica.}
+\\La función de Wigner está normalizada de modo que:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \iint W(x,p) \, dx \, dp = 1
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+y sus proyecciones reproducen las densidades de probabilidad ordinarias:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \int W(x,p)\, dp = |\psi(x)|^2, \qquad \int W(x,p)\, dx = |\phi(p)|^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{De este modo, la función de Wigner actúa como un puente entre las representaciones de posición y momento.}
+
+\subsection{Propiedades generales}
+Entre las propiedades más relevantes de $W(x,p)$ se encuentran:
+\begin{enumerate}
+  \item Es real, aunque no positiva definida.
+  \item Está normalizada a la unidad.
+  \item Se transforma covariantemente bajo traslaciones y rotaciones del espacio de fase.
+  \item Permite calcular el valor esperado de un observable $\hat{A}$ mediante:
+  \begin{tcolorbox}[bluebox]
+  \begin{equation}
+    \begin{aligned}
+      \langle \hat{A} \rangle = \iint W(x,p)\, A_W(x,p)\, dx\,dp
+    \end{aligned}
+  \end{equation}
+  \end{tcolorbox}
+  donde $A_W(x,p)$ es el símbolo de Wigner–Weyl del operador $\hat{A}$.
+\end{enumerate}
+
+\subsection{Ejemplo: estado coherente en el espacio de fase}
+Para un estado coherente $|\alpha\rangle$, la función de Wigner adopta una forma gaussiana centrada en $(x_0,p_0)$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W_\alpha(x,p) = \frac{1}{\pi\hbar}\exp\!\left[-\frac{(x-x_0)^2}{\sigma_x^2} - \frac{(p-p_0)^2}{\sigma_p^2}\right]
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta expresión refleja que el estado coherente es el más "clásico" de todos los estados cuánticos, pues su distribución se mantiene mínima y centrada a lo largo del tiempo.}
+
+\subsection{Simetría de paridad y negatividad cuántica}
+Las regiones donde $W(x,p)<0$ no poseen interpretación probabilística clásica; representan interferencias puramente cuánticas.  
+Esta característica hace de $W(x,p)$ una herramienta esencial para distinguir entre estados cuánticos clásicos y no clásicos.
+\comentario{Más adelante se mostrará cómo los estados comprimidos y los estados de Fock de orden alto exhiben regiones de negatividad en $W(x,p)$.}
+
+\subsection{Transformación de Wigner–Weyl}
+El formalismo de Wigner puede extenderse a cualquier operador mediante la transformación de Wigner–Weyl:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    A_W(x,p) = \int e^{2ipy/\hbar}\left\langle x - y \middle| \hat{A} \middle| x + y \right\rangle dy
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta transformación asocia a cada operador $\hat{A}$ una función en el espacio de fase, lo que permite expresar la mecánica cuántica en un marco algebraico completamente clásico.}

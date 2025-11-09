@@ -1,0 +1,37 @@
+\section{Oscilador Armónico Clásico}
+El oscilador armónico clásico describe el movimiento de una partícula sujeta a una fuerza restauradora proporcional a su desplazamiento. Matemáticamente, esta relación se expresa mediante la \textit{segunda ley de Newton}:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    F &= -k\,x
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La constante $k$ caracteriza la rigidez del sistema. Cuanto mayor sea $k$, más intensa será la fuerza de restitución.}
+Aplicando la relación de Newton $F = m\,a$, obtenemos la ecuación diferencial del movimiento:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    m\frac{d^2x}{dt^2} + kx = 0
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Esta ecuación tiene como solución general:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    x(t) = A\cos(\omega t + \phi)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $\omega = \sqrt{k/m}$ es la \textit{frecuencia angular}, $A$ la \textit{amplitud} y $\phi$ la \textit{fase inicial}.
+\comentario{El movimiento es periódico, y la energía total del sistema se mantiene constante.}
+\\La energía total se expresa mediante el Hamiltoniano clásico:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    H &= \frac{p^2}{2m} + \frac{1}{2}m\omega^2x^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $p = m\,\dot{x}$ es el momento lineal. Este Hamiltoniano servirá como punto de partida para la formulación cuántica.

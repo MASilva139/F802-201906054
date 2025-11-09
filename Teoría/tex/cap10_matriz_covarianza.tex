@@ -1,0 +1,107 @@
+\section{Matriz de Covarianza}
+La \textit{matriz de covarianza} es una descripción estadística compacta de un estado cuántico gaussiano.  
+Contiene toda la información necesaria sobre las incertidumbres y correlaciones de las cuadraturas del campo electromagnético.
+\comentario{Para estados gaussianos, la matriz de covarianza es equivalente a conocer por completo la función de Wigner.}
+
+\subsection{Definición general}
+Sea el vector de cuadraturas $\hat{\mathbf{R}} = (\hat{X}, \hat{P})^T$.  
+La matriz de covarianza se define como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V}_{ij} = \frac{1}{2}\langle \hat{R}_i \hat{R}_j + \hat{R}_j \hat{R}_i \rangle
+    - \langle \hat{R}_i \rangle \langle \hat{R}_j \rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El primer término mide las correlaciones simétricas entre cuadraturas, mientras que el segundo elimina las medias.}
+Para un estado de un solo modo, la matriz toma la forma:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V} =
+    \begin{pmatrix}
+      \langle \Delta \hat{X}^2 \rangle & \frac{1}{2}\langle \{\hat{X},\hat{P}\} \rangle \\
+      \frac{1}{2}\langle \{\hat{P},\hat{X}\} \rangle & \langle \Delta \hat{P}^2 \rangle
+    \end{pmatrix}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La diagonal contiene las varianzas individuales y los términos fuera de la diagonal representan correlaciones entre cuadraturas.}
+
+\subsection{Propiedades básicas}
+La matriz de covarianza cumple la desigualdad de Heisenberg:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \det(\mathbf{V}) \geq \frac{1}{4}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta condición garantiza que las incertidumbres nunca violen el principio de Heisenberg.}
+Para un estado coherente, se tiene:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V}_{\text{coh}} =
+    \frac{1}{2}
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La incertidumbre es mínima y simétrica en ambas cuadraturas.}
+Para un estado comprimido:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V}_{\text{sqz}} =
+    \frac{1}{2}
+    \begin{pmatrix}
+      e^{-2r} & 0 \\
+      0 & e^{2r}
+    \end{pmatrix}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La compresión modifica la diagonal de la matriz, reduciendo una varianza y ampliando la otra.}
+
+\subsection{Covarianza de estados mezclados}
+Si el sistema está en contacto con un entorno térmico a temperatura $T$, las varianzas se incrementan de acuerdo con la ocupación media $\bar{n}$ del modo:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V}_{\text{th}} =
+    \left(\bar{n}+\frac{1}{2}\right)
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix},
+    \qquad \bar{n} = \frac{1}{e^{\hbar\omega/k_BT} - 1}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El estado térmico mantiene la simetría entre cuadraturas, pero con incertidumbres ampliadas debido al ruido térmico.}
+
+\subsection{Correlaciones entre modos}
+Para un sistema de dos modos, el vector de cuadraturas es $\hat{\mathbf{R}} = (\hat{X}_1, \hat{P}_1, \hat{X}_2, \hat{P}_2)^T$, y la matriz de covarianza adopta la forma por bloques:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \mathbf{V} =
+    \begin{pmatrix}
+      \mathbf{A} & \mathbf{C} \\
+      \mathbf{C}^T & \mathbf{B}
+    \end{pmatrix}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $\mathbf{A}$ y $\mathbf{B}$ representan las covarianzas de cada modo y $\mathbf{C}$ describe las correlaciones entre ellos.
+\comentario{Las correlaciones cuánticas entre modos son el origen de la \textit{entrelazación gaussiana}.}
+
+\subsection{Interpretación geométrica}
+La matriz de covarianza determina la forma y orientación de la elipse de incertidumbre en el espacio de fase.  
+Sus autovalores indican las longitudes de los ejes principales, y su determinante mide el “área cuántica” mínima permitida por el principio de incertidumbre.
+\comentario{Esta interpretación geométrica permite visualizar la transición entre estados coherentes, comprimidos y térmicos de manera unificada.}

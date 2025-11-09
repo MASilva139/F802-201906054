@@ -1,0 +1,76 @@
+\section{Operadores de Cuadratura}
+En óptica cuántica, los \textit{operadores de cuadratura} proporcionan una forma conveniente de describir los campos electromagnéticos en términos análogos a las variables de posición y momento del oscilador armónico cuántico.
+\comentario{Las cuadraturas permiten expresar las observables medibles de un campo cuántico en un marco geométrico y probabilístico.}
+
+\subsection{Definición de las cuadraturas}
+Dado un modo del campo descrito por los operadores de creación y aniquilación $\hat{a}$ y $\hat{a}^{\dagger}$, se definen las cuadraturas canónicas:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{X} &= \frac{1}{\sqrt{2}}\left(\hat{a} + \hat{a}^\dagger\right), \\
+    \hat{P} &= \frac{1}{i\sqrt{2}}\left(\hat{a} - \hat{a}^\dagger\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Los operadores $\hat{X}$ y $\hat{P}$ cumplen el mismo álgebra de conmutación que las variables de posición y momento:}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    [\hat{X}, \hat{P}] = i
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{En unidades naturales con $\hbar = 1$, la relación anterior coincide con la de Heisenberg.}
+
+\subsection{Expresiones en términos de operadores físicos}
+El Hamiltoniano del oscilador puede reescribirse en función de las cuadraturas:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} &= \frac{\hbar\omega}{2}\left(\hat{X}^2 + \hat{P}^2\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta forma revela la equivalencia entre la energía del campo y la suma cuadrática de las amplitudes conjugadas.}
+
+\subsection{Cuadratura generalizada}
+Se define la \textit{cuadratura generalizada} para un ángulo de fase $\theta$ como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{X}_\theta = \frac{1}{\sqrt{2}}\left(\hat{a}e^{-i\theta} + \hat{a}^\dagger e^{i\theta}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El parámetro $\theta$ permite seleccionar la componente del campo que se mide en un experimento de homodinia o heterodinia.}
+\\Las cuadraturas $\hat{X}_\theta$ y $\hat{X}_{\theta+\pi/2}$ forman un par conjugado que obedece la relación de conmutación:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    [\hat{X}_\theta, \hat{X}_{\theta+\pi/2}] = i
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+
+\subsection{Propiedades estadísticas}
+La dispersión de una cuadratura en un estado cualquiera $|\psi\rangle$ se define como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    (\Delta X_\theta)^2 = \langle \psi | \hat{X}_\theta^2 | \psi \rangle - \langle \psi | \hat{X}_\theta | \psi \rangle^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+En el caso de un estado coherente $|\alpha\rangle$, se cumple:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    (\Delta X_\theta)^2 = \frac{1}{2}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esto indica que las cuadraturas de un estado coherente poseen incertidumbre mínima y simétrica, reproduciendo el límite clásico.}
+
+\subsection{Interpretación física}
+Los operadores $\hat{X}$ y $\hat{P}$ representan las componentes de fase del campo eléctrico cuántico. En una medición experimental, cada cuadratura puede ser accedida mediante técnicas de detección homodina.
+\comentario{En capítulos posteriores se mostrará cómo la compresión cuántica modifica la dispersión de las cuadraturas, dando origen a los estados \textit{squeezed}.}

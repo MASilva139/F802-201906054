@@ -1,0 +1,133 @@
+\appendix
+\section*{Apéndice A: Ecuaciones Fundamentales}
+\addcontentsline{toc}{section}{Apéndice A: Ecuaciones Fundamentales}
+
+Este apéndice reúne las ecuaciones clave que estructuran la teoría del oscilador armónico cuántico y sus extensiones hacia los estados coherentes, comprimidos y correlacionados.  
+Cada expresión se presenta con su numeración independiente para referencia rápida.
+
+\renewcommand{\theequation}{A.\arabic{equation}}
+\setcounter{equation}{0}
+
+%--------------------------------------------------------
+\subsection*{A.1. Ecuación de movimiento clásica}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    m\frac{d^2x}{dt^2} + kx = 0
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Describe la oscilación armónica clásica con frecuencia angular $\omega = \sqrt{k/m}$.}
+
+%--------------------------------------------------------
+\subsection*{A.2. Hamiltoniano clásico y cuántico}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2\hat{x}^2
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Base del oscilador armónico cuántico, obtenida por promoción de $x,p$ a operadores.}
+
+%--------------------------------------------------------
+\subsection*{A.3. Operadores de creación y aniquilación}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a} = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i}{m\omega}\hat{p}\right), \quad
+    \hat{a}^\dagger = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i}{m\omega}\hat{p}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Definen la estructura algebraica del oscilador; satisfacen $[\hat{a},\hat{a}^\dagger]=1$.}
+
+%--------------------------------------------------------
+\subsection*{A.4. Energía cuantizada}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    E_n = \hbar\omega\left(n + \frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Autovalores del Hamiltoniano del oscilador: cuantización discreta de la energía.}
+
+%--------------------------------------------------------
+\subsection*{A.5. Estado coherente}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\alpha\rangle = e^{-|\alpha|^2/2}\sum_{n=0}^\infty \frac{\alpha^n}{\sqrt{n!}}|n\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Solución del autovalor $\hat{a}|\alpha\rangle = \alpha|\alpha\rangle$; reproduce el movimiento clásico.}
+
+%--------------------------------------------------------
+\subsection*{A.6. Operador de desplazamiento}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{D}(\alpha) = e^{\alpha\hat{a}^\dagger - \alpha^*\hat{a}}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Desplaza el estado de vacío en el espacio de fase: $|\alpha\rangle = \hat{D}(\alpha)|0\rangle$.}
+
+%--------------------------------------------------------
+\subsection*{A.7. Operador de compresión (squeezing)}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{S}(\zeta) = \exp\!\left[\frac{1}{2}\left(\zeta^*\hat{a}^2 - \zeta(\hat{a}^\dagger)^2\right)\right]
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Reduce la incertidumbre en una cuadratura a costa de aumentar la de la conjugada.}
+
+%--------------------------------------------------------
+\subsection*{A.8. Función de Wigner}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W(x,p) = \frac{1}{\pi\hbar}\int_{-\infty}^{\infty}
+    \psi^*\!\left(x+y\right)\psi\!\left(x-y\right)e^{2ipy/\hbar}\,dy
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Representación cuasi-probabilística del estado cuántico en el espacio de fase.}
+
+%--------------------------------------------------------
+\subsection*{A.9. Matriz de covarianza}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    V_{ij} = \frac{1}{2}\langle \hat{R}_i\hat{R}_j + \hat{R}_j\hat{R}_i\rangle
+    - \langle \hat{R}_i\rangle\langle \hat{R}_j\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Caracteriza las correlaciones entre cuadraturas y la incertidumbre cuántica mínima.}
+
+%--------------------------------------------------------
+\subsection*{A.10. Hamiltoniano paramétrico}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H}_{\text{int}} = i\hbar\kappa\left(\hat{a}^{\dagger 2} - \hat{a}^2\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Modelo idealizado de la amplificación paramétrica responsable de generar luz comprimida.}
+
+%--------------------------------------------------------
+\subsection*{A.11. Condición de incertidumbre de Heisenberg}
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \det(\mathbf{V}) \geq \frac{1}{4}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Forma matricial general de la desigualdad de Heisenberg, válida para todo estado gaussiano.}

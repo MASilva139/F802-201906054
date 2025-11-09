@@ -1,0 +1,115 @@
+\section{Implementación Numérica}
+El análisis numérico permite visualizar la evolución de los estados cuánticos y comprobar las propiedades teóricas del oscilador armónico, los estados coherentes, comprimidos y sus respectivas funciones de Wigner.  
+En esta sección se describen estrategias de simulación en Python y MATLAB, basadas en el cálculo matricial de operadores y la expansión en la base de Fock.
+\comentario{El enfoque numérico traduce la teoría en experimentos virtuales que pueden explorarse y visualizarse de manera controlada.}
+
+\subsection{Discretización de la base de Fock}
+Para una simulación finita, se trunca la base de Fock a un número $N_{\text{max}}$ de niveles.  
+Los operadores de aniquilación y creación se representan como matrices $N_{\text{max}} \times N_{\text{max}}$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    (\hat{a})_{n,m} &= \sqrt{m}\,\delta_{n,m-1}, \\
+    (\hat{a}^\dagger)_{n,m} &= \sqrt{n}\,\delta_{n,m+1}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Con esta representación matricial, los operadores y los estados pueden manipularse mediante álgebra lineal estándar.}
+
+\subsection{Construcción del Hamiltoniano}
+El Hamiltoniano del oscilador armónico se construye en esta base como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} = \hbar\omega\left(\hat{a}^\dagger\hat{a} + \frac{1}{2}\mathbb{I}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta forma matricial permite calcular numéricamente los autovalores y autovectores, verificando la cuantización de la energía.}
+
+\subsection{Evolución temporal numérica}
+El operador de evolución unitario se aproxima mediante la exponencial matricial:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{U}(t) = e^{-i\hat{H}t/\hbar}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+En Python (usando \texttt{NumPy} y \texttt{SciPy}), se implementa como:
+\begin{lstlisting}[language=Python]
+import numpy as np
+from scipy.linalg import expm
+
+U_t = expm(-1j * H * t / hbar)
+psi_t = U_t @ psi0
+\end{lstlisting}
+\comentario{Esta aproximación permite estudiar la rotación temporal de un estado coherente o comprimido en el espacio de fase.}
+
+\subsection{Cálculo de la función de Wigner}
+La función de Wigner puede calcularse numéricamente mediante su definición integral o usando librerías dedicadas.
+Para un estado $\rho = |\psi\rangle\langle\psi|$, la versión discreta se implementa como:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+    \begin{aligned}
+        W(x,p) = \frac{1}{\pi\hbar}\sum_{m,n}\rho_{mn},e^{-2i p (x_m - x_n)/\hbar}
+    \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Ejemplo en Python (usando \texttt{QuTiP}):
+\begin{lstlisting}[language=Python]
+from qutip import coherent, wigner, Qobj
+import matplotlib.pyplot as plt
+
+alpha = 1.0
+psi = coherent(40, alpha)
+x = np.linspace(-5, 5, 200)
+p = np.linspace(-5, 5, 200)
+W = wigner(psi, x, p)
+
+plt.contourf(x, p, W, 100, cmap='RdBu_r')
+plt.xlabel("x")
+plt.ylabel("p")
+
+plt.show()
+\end{lstlisting}
+\comentario{El resultado visualiza la distribución gaussiana en el espacio de fase y su evolución en el tiempo.}
+
+\subsection{Simulación de compresión}
+La acción del operador de compresión se modela aplicando la transformación:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+    \begin{aligned}
+        \hat{S}(\zeta) = \exp!\left[\frac{1}{2}(\zeta^*\hat{a}^2 - \zeta(\hat{a}^\dagger)^2)\right]
+    \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Ejemplo en \texttt{QuTiP}:
+\begin{lstlisting}[language=Python]
+from qutip import squeeze, expect, sigmax
+
+r = 0.8
+zeta = r * np.exp(1j * 0)
+S = squeeze(40, zeta)
+psi_sqz = S * psi
+\end{lstlisting}
+\comentario{Este código genera un estado comprimido con factor $r=0.8$ y permite comparar las incertidumbres $\Delta X$ y $\Delta P$.}
+
+\subsection{Representación de la matriz de covarianza}
+Numéricamente, la matriz de covarianza se calcula a partir de los valores esperados de las cuadraturas:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+    \begin{aligned}
+        V_{ij} = \frac{1}{2}\langle \hat{R}_i \hat{R}_j + \hat{R}_j \hat{R}_i \rangle - \langle \hat{R}_i \rangle \langle \hat{R}_j \rangle
+    \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Ejemplo en Python:
+\begin{lstlisting}[language=Python]
+from qutip import quadrature
+
+X = quadrature(psi_sqz, 0)
+P = quadrature(psi_sqz, np.pi/2)
+V = np.array([[np.var(X), 0], [0, np.var(P)]])
+\end{lstlisting}
+\comentario{El resultado numérico confirma las relaciones teóricas: $(\Delta X)^2 = \tfrac{1}{2}e^{-2r}$ y $(\Delta P)^2 = \tfrac{1}{2}e^{2r}$.}

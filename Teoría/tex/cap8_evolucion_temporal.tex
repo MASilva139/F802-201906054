@@ -1,0 +1,106 @@
+\section{Evolución Temporal del Oscilador Armónico Cuántico}
+El estudio de la evolución temporal permite comprender cómo los estados cuánticos del oscilador armónico se comportan bajo la acción del operador de evolución unitario.  
+En el caso de estados coherentes o comprimidos, esta evolución mantiene la forma de la función de onda, modificando únicamente su fase y posición en el espacio de fase.
+\comentario{El oscilador armónico es uno de los pocos sistemas cuánticos cuya evolución temporal puede obtenerse de forma exacta.}
+
+\subsection{Ecuación de Schrödinger dependiente del tiempo}
+La dinámica de cualquier estado cuántico $|\psi(t)\rangle$ está gobernada por la ecuación de Schrödinger:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    i\hbar \frac{d}{dt}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Para el oscilador armónico,
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{H} = \hbar\omega\left(\hat{a}^\dagger \hat{a} + \frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+La solución formal de esta ecuación se expresa mediante el operador de evolución unitario:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{U}(t) = e^{-i\hat{H}t/\hbar}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El operador $\hat{U}(t)$ preserva la norma del estado, garantizando la conservación de la probabilidad total.}
+
+\subsection{Evolución de los operadores de creación y aniquilación}
+En el marco de Heisenberg, los operadores evolucionan en el tiempo según:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a}(t) &= e^{i\hat{H}t/\hbar}\, \hat{a}\, e^{-i\hat{H}t/\hbar}, \\
+    \hat{a}^\dagger(t) &= e^{i\hat{H}t/\hbar}\, \hat{a}^\dagger\, e^{-i\hat{H}t/\hbar}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+Evaluando las conmutaciones se obtiene:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a}(t) &= \hat{a}(0)e^{-i\omega t}, \\
+    \hat{a}^\dagger(t) &= \hat{a}^\dagger(0)e^{i\omega t}
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El operador de aniquilación rota en el espacio de fase con frecuencia $\omega$, describiendo un movimiento circular.}
+
+\subsection{Evolución del estado coherente}
+Aplicando el operador de evolución sobre un estado coherente inicial $|\alpha(0)\rangle$, se tiene:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\alpha(t)\rangle &= \hat{U}(t)|\alpha(0)\rangle = e^{-i\omega t/2}|\alpha(0)e^{-i\omega t}\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El estado coherente conserva su forma, pero rota en el espacio de fase siguiendo la trayectoria clásica del oscilador.}
+
+\subsection{Evolución del estado comprimido}
+Para un estado comprimido coherente $|\alpha,\zeta\rangle$, la evolución temporal introduce una rotación tanto del desplazamiento como del parámetro de compresión:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\alpha,\zeta;t\rangle = \hat{U}(t)|\alpha,\zeta\rangle
+    = e^{-i\omega t/2}\, |\alpha e^{-i\omega t}, \zeta e^{-2i\omega t}\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El parámetro $\zeta$ rota con el doble de la frecuencia angular, lo que implica una oscilación periódica de la elipse de incertidumbre en el espacio de fase.}
+
+\subsection{Propagador del oscilador armónico}
+Otra forma equivalente de estudiar la evolución es mediante el \textit{propagador} $K(x,t;x',0)$, que relaciona la función de onda inicial con la final:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \psi(x,t) = \int_{-\infty}^{\infty} K(x,t;x',0)\,\psi(x',0)\,dx'
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+El propagador exacto del oscilador armónico se obtiene evaluando la integral de camino y resulta:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    K(x,t;x',0) &= \sqrt{\frac{m\omega}{2\pi i\hbar\sin(\omega t)}}
+    \exp\!\left[\frac{i m\omega}{2\hbar\sin(\omega t)}\left((x^2+x'^2)\cos(\omega t) - 2xx'\right)\right]
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Este propagador describe cómo la probabilidad se propaga en el tiempo dentro del potencial armónico. Es una herramienta central en formulaciones de la mecánica cuántica basadas en integrales de camino.}
+
+\subsection{Periodicidad y estabilidad del movimiento}
+El oscilador armónico cuántico exhibe periodicidad exacta en su evolución: después de un periodo $T = 2\pi/\omega$, todos los estados recuperan su forma inicial salvo una fase global.
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\psi(T)\rangle = e^{-i\pi}|\psi(0)\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La fase adquirida, llamada \textit{fase de Berry dinámica}, carece de efectos observables, pero tiene implicaciones topológicas en sistemas más complejos.}

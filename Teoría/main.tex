@@ -1,0 +1,86 @@
+\documentclass[osajnl,showpacs,superscriptaddress,10pt]{revtex4-2}
+
+%-------------------------------------------------
+% ------------------- PAQUETES -------------------
+%-------------------------------------------------
+\usepackage{bm,bbm,lipsum}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,animate,xcolor,subfig,gensymb,physics,amsmath,amsfonts,amssymb,mathrsfs,pbsi,calligra}
+\usepackage[pdftex]{hyperref}
+\usepackage{multirow,booktabs,float,wrapfig2,boxedminipage,tensor}
+\usepackage{titlesec,indentfirst,calc,changepage,extpfeil}
+\usepackage[skins,breakable,most]{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{floatflt,subcaption,textcomp}
+\AtBeginDocument{\selectlanguage{spanish}}
+\decimalpoint
+
+%-------------------------------------------------
+% --------- CONFIGURACIONES Y MACROS -------------
+%-------------------------------------------------
+\numberwithin{equation}{section} % (1.1), (1.2), etc.
+\setlength{\parindent}{12pt}
+\setlength{\parskip}{4pt}
+
+% --- Definiciones de colores y cajas ---
+\tcbset{
+  bluebox/.style={
+    colback=blue!5!white,
+    colframe=blue!60!black,
+    boxrule=0.5pt,
+    sharp corners,
+    width=\linewidth,
+    breakable,
+    enhanced jigsaw,
+    before upper=\color{black},
+  }
+}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true
+}
+
+\newcommand{\comentario}[1]{\textcolor{gray}{\textit{#1}}}
+
+%-------------------------------------------------
+% ------------------- DOCUMENTO ------------------
+%-------------------------------------------------
+\begin{document}
+
+\title{Oscilador Armónico Cuántico y Estados Coherentes}
+\maketitle
+
+% \begin{abstract}
+%     Este trabajo presenta un análisis detallado del oscilador armónico cuántico y su extensión hacia los estados coherentes, abordando la formulación clásica y cuántica, los operadores de creación y aniquilación, la representación en el espacio de Fock y el papel fundamental de estos conceptos en la óptica cuántica moderna. Se incluyen desarrollos matemáticos explicados paso a paso, con apoyo en obras clásicas y contemporáneas de la disciplina.
+% \end{abstract}
+
+\tableofcontents
+\newpage
+
+%-------------------------------------------------
+% ------------------ CAPÍTULOS -------------------
+%-------------------------------------------------
+\input{tex/cap1_introduccion}
+\input{tex/cap2_oscilador_clasico}
+\input{tex/cap3_oscilador_cuantico}
+\input{tex/cap4_estados_coherentes}
+\input{tex/cap5_operadores_cuadratura}
+\input{tex/cap6_espacio_fase}
+\input{tex/cap7_estados_comprimidos}
+\input{tex/cap8_evolucion_temporal}
+\input{tex/cap9_funcion_wigner}
+\input{tex/cap10_matriz_covarianza}
+\input{tex/cap11_deteccion_cuantica}
+\input{tex/cap12_amplificacion_parametrica}
+```latex
+\input{tex/cap13_implementacion_numerica}
+\input{tex/apendice_ecuaciones}
+
+\end{document}

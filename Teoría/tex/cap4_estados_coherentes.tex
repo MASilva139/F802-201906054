@@ -1,0 +1,83 @@
+\section{Estados Coherentes}
+Los \textit{estados coherentes} son soluciones especiales del oscilador armónico cuántico que reproducen, en el límite cuántico, el comportamiento de una oscilación clásica.  
+Fueron introducidos formalmente por Roy J. Glauber en la década de 1960 como la base teórica de la \textit{óptica cuántica} moderna.
+\comentario{Un estado coherente puede considerarse el análogo cuántico de una onda clásica monocromática.}
+
+\subsection{Definición del estado coherente}
+El estado coherente $|\alpha\rangle$ se define como un \textit{autovector del operador de aniquilación} $\hat{a}$:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{a}|\alpha\rangle = \alpha |\alpha\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+donde $\alpha$ es un número complejo que codifica tanto la amplitud como la fase del estado.
+\comentario{A diferencia de los estados de número $|n\rangle$, los estados coherentes no tienen un número definido de cuantos, sino una distribución de Poisson en energía.}
+La expansión de $|\alpha\rangle$ en la base de Fock se obtiene aplicando el operador de desplazamiento:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    |\alpha\rangle = e^{-|\alpha|^2/2}\sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}|n\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El coeficiente exponencial garantiza la normalización $\langle \alpha|\alpha\rangle = 1$.}
+
+\subsection{Propiedades principales}
+Los estados coherentes poseen propiedades análogas a las de una onda clásica:
+\begin{enumerate}
+  \item Minimiza el principio de incertidumbre de Heisenberg:
+  \begin{tcolorbox}[bluebox]
+  \begin{equation}
+    \begin{aligned}
+      \Delta x\,\Delta p = \frac{\hbar}{2}
+    \end{aligned}
+  \end{equation}
+  \end{tcolorbox}
+  \comentario{Esto significa que las incertidumbres en posición y momento están igualmente repartidas.}
+  \item La media de los operadores $\hat{x}$ y $\hat{p}$ evoluciona como en el caso clásico:
+  \begin{tcolorbox}[bluebox]
+  \begin{equation}
+    \begin{aligned}
+      \langle \hat{x}(t) \rangle &= \sqrt{\frac{2\hbar}{m\omega}}\Re[\alpha e^{-i\omega t}], \\
+      \langle \hat{p}(t) \rangle &= \sqrt{2\hbar m\omega}\Im[\alpha e^{-i\omega t}]
+    \end{aligned}
+  \end{equation}
+  \end{tcolorbox}
+  \comentario{Ambas expectativas oscilan con frecuencia $\omega$, reproduciendo el movimiento clásico.}
+\end{enumerate}
+
+\subsection{Operador de desplazamiento}
+Otra forma equivalente de construir $|\alpha\rangle$ es mediante el operador de desplazamiento:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \hat{D}(\alpha) &= e^{\alpha\hat{a}^\dagger - \alpha^*\hat{a}}, \\
+    |\alpha\rangle &= \hat{D}(\alpha)|0\rangle
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{El operador $\hat{D}(\alpha)$ desplaza el estado de vacío en el espacio de fase, generando el estado coherente correspondiente.}
+
+\subsection{Interpretación en el espacio de fase}
+En la representación de Wigner, el estado coherente aparece como una distribución gaussiana centrada en el punto $(x_0, p_0)$ del espacio de fase:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    W_\alpha(x,p) = \frac{1}{\pi\hbar}\exp\left[-\frac{(x-x_0)^2}{\sigma_x^2} - \frac{(p-p_0)^2}{\sigma_p^2}\right]
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{Esta forma resalta la dualidad del estado coherente: una función cuántica que conserva la localización mínima permitida por el principio de incertidumbre.}
+
+\subsection{Energía media y dispersión}
+El valor medio de la energía en el estado $|\alpha\rangle$ es:
+\begin{tcolorbox}[bluebox]
+\begin{equation}
+  \begin{aligned}
+    \langle \hat{H} \rangle_\alpha &= \hbar\omega\left(|\alpha|^2 + \frac{1}{2}\right)
+  \end{aligned}
+\end{equation}
+\end{tcolorbox}
+\comentario{La energía media se comporta como en un oscilador clásico, con un término adicional correspondiente a la energía del punto cero.}
