@@ -1,0 +1,17 @@
+RESUMEN DE ANÁLISIS - estado_coherente_20251108_232316
+======================================================================
+
+Tipo de simulación: estado_coherente
+Puntos de datos: 2495
+Tiempo total: 41.1360 s
+Fecha de análisis: 2025-11-24 12:04:44
+
+ESTADÍSTICAS CUÁNTICAS
+----------------------------------------------------------------------
+⟨X⟩ promedio: -0.039507
+⟨P⟩ promedio: -0.186556
+ΔX promedio: 1.000000
+ΔP promedio: 1.000000
+ΔX·ΔP promedio: 1.000000
+Energía promedio: 8.650000
+Pureza promedio: 0.500000

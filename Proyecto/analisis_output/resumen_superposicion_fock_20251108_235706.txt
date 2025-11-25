@@ -1,0 +1,17 @@
+RESUMEN DE ANÁLISIS - superposicion_fock_20251108_235706
+======================================================================
+
+Tipo de simulación: superposicion
+Puntos de datos: 443
+Tiempo total: 10.0160 s
+Fecha de análisis: 2025-11-24 12:07:58
+
+ESTADÍSTICAS CUÁNTICAS
+----------------------------------------------------------------------
+⟨X⟩ promedio: -0.148175
+⟨P⟩ promedio: -0.029545
+ΔX promedio: 0.713340
+ΔP promedio: 0.704593
+ΔX·ΔP promedio: 0.501495
+Energía promedio: 1.484615
+Pureza promedio: 1.001141

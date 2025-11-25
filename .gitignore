@@ -11,14 +11,6 @@
 **/.venv/
 **/__pycache__/
 **/*.toc
-Prueba02.py
-Prueba03.py
-Prueba04.py
-Prueba05.py
-Prueba06.py
-Prueba07.py
-qho_quadrature_pygame_forced_wigner.py
-qho_quadrature_pygame_multi.py
-qho_quadrature_pygame.py
 documentación.md
 qho_teoria.md
+Python/

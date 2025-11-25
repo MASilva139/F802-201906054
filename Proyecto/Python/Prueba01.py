@@ -46,7 +46,7 @@ trail = deque(maxlen=max_pts)
 # ---------------- Pygame setup ----------------
 pygame.init()
 screen = pygame.display.set_mode((W, H))
-pygame.display.set_caption("QHO Coherent State — Quadrature Space")
+pygame.display.set_caption("Espacio de Cuadraturas - Oscilador Armónico Cuántico (QHO)")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 18)
 

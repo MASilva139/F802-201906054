@@ -1,0 +1,17 @@
+RESUMEN DE ANÁLISIS - estado_comprimido_20251108_232436
+======================================================================
+
+Tipo de simulación: estado_comprimido
+Puntos de datos: 1711
+Tiempo total: 28.8480 s
+Fecha de análisis: 2025-11-24 12:06:15
+
+ESTADÍSTICAS CUÁNTICAS
+----------------------------------------------------------------------
+⟨X⟩ promedio: -0.099051
+⟨P⟩ promedio: -0.171980
+ΔX promedio: 1.391973
+ΔP promedio: 1.355490
+ΔX·ΔP promedio: 1.634160
+Energía promedio: 6.913052
+Pureza promedio: 0.500000
